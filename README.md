@@ -12,4 +12,4 @@ Python: 3.8
 
 OS: Windows 11, with WSL2, which has Ubuntu 22.04 LTS
 
-Github Desktop too, since it is cool.
+GitHub Desktop too, since it is cool.
