@@ -1,3 +1,4 @@
 venvlin
 .vscode
 .env
+Email/email_config.py
