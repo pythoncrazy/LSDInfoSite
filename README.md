@@ -13,3 +13,5 @@ Python: 3.8
 OS: Windows 11, with WSL2, which has Ubuntu 22.04 LTS
 
 GitHub Desktop too, since it is cool.
+
+Anaconda 2022.10, because I am not dealing with venv being bad and conflicting with the default python. (https://stackoverflow.com/questions/26053982/setup-script-exited-with-error-command-x86-64-linux-gnu-gcc-failed-with-exit, it is beyond bad)
