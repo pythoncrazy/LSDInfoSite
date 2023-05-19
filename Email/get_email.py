@@ -5,6 +5,12 @@ from email_config import gmail_pass, user, host
 
 
 def read_email_from_gmail(count=3, contain_body=False):
+    '''
+    Returns the number of emails as 'count', in the form of a list of a list
+    [0] is the person who it is from, [1] is the subject of the email, 
+    [2] (if contain_body==True), is the body of the email.
+    
+    '''
 
     # Create server and login
     mail = imaplib.IMAP4_SSL(host)
@@ -15,9 +21,9 @@ def read_email_from_gmail(count=3, contain_body=False):
 
     # Caluclating the total number of sent Emails
     messages = int(messages[0])
-
     # Iterating over the sent emails
     for i in range(messages, messages - count, -1):
+        print(i)
         # RFC822 protocol
         res, msg = mail.fetch(str(i), "(RFC822)")
         for response in msg:
@@ -36,7 +42,7 @@ def read_email_from_gmail(count=3, contain_body=False):
                 if temp.is_multipart():
                     for part in temp.walk():
                         ctype = part.get_content_type()
-                        cdispo = str(part.get('Content-Disposition'))
+                        
 
                         # skip text/plain type
                         if ctype == 'text/plain' and 'attachment' not in cdispo:
@@ -46,14 +52,18 @@ def read_email_from_gmail(count=3, contain_body=False):
                     body = temp.get_payload(decode=True)
 
                 # Print Sender, Subject, Body
-                print("-"*50)  # To divide the messages
-                print("From    : ", sender)
-                print("Subject : ", subject)
+                ret_list = []
+                tmp = []
+                tmp.append(sender)
+                tmp.append(subject)
                 if(contain_body):
-                    print("Body    : ", body.decode())
+                    tmp.append(body)
+                ret_list.append(tmp)
+    return ret_list
 
     mail.close()
     mail.logout()
 
-
-read_email_from_gmail(3, True)
+x= read_email_from_gmail(3,True)
+print(len(x))
+print(x[2][2])
