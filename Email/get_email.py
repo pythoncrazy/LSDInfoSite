@@ -42,7 +42,7 @@ def read_email_from_gmail(count=3, contain_body=False):
                 if temp.is_multipart():
                     for part in temp.walk():
                         ctype = part.get_content_type()
-                        
+                        cdispo = str(part.get('Content-Disposition'))
 
                         # skip text/plain type
                         if ctype == 'text/plain' and 'attachment' not in cdispo:
@@ -66,4 +66,4 @@ def read_email_from_gmail(count=3, contain_body=False):
 
 x= read_email_from_gmail(3,True)
 print(len(x))
-print(x[2][2])
+print(x)
