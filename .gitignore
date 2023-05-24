@@ -1,4 +1,4 @@
 venvlin
 .vscode
 .env
-Email/email_config.py
+Email/token.json
