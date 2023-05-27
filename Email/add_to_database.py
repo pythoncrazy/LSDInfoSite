@@ -9,16 +9,6 @@ from googleapiclient.errors import HttpError
 conn = sqlite3.connect('emails.db')
 c = conn.cursor()
 
-
-
-# Create table for Monday Briefing emails
-c.execute('''CREATE TABLE IF NOT EXISTS monday_briefing
-             (id INTEGER PRIMARY KEY, subject TEXT, sender TEXT, body TEXT)''')
-
-# Create table for misc emails
-c.execute('''CREATE TABLE IF NOT EXISTS misc
-             (id INTEGER PRIMARY KEY, subject TEXT, sender TEXT, body TEXT)''')
-
 # Authenticate to Gmail API
 creds = Credentials.from_authorized_user_file('Email/token.json')
 service = build('gmail', 'v1', credentials=creds)
