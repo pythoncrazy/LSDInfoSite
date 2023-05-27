@@ -2,3 +2,4 @@ venvlin
 .vscode
 .env
 Email/token.json
+Email/email_config.py
