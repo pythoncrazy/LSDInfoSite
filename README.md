@@ -2,7 +2,13 @@
 This is the official source code of the LSD Information Website
 I am using Django, with python==3.8, since I massively prefer having a slightly outdated version in exchange for everything working!
 
-The idea of the website is to allow for someone, like the SECRETARY OF LSD (I wish it was me...), could add information to the website, and allow for the information to be put on the website.
+The idea of the website is to allow for someone, like the SECRETARY OF LSD (I wish it was me...), could add information to the website, and allow for the information to be put on the website. In the future, I plan to add a calendar option to the website, which would massively improve the ability for the time.
+
+Database strucutre:
+table Monday_Briefings: LONGTEXT Subject, LONGTEXT Sender, LONGTEXT body. The format of the body is in html form.
+table past_tournament: LONGTEXT Subject, LONGTEXT Sender, LONGTEXT body. The format of the body is in html form.
+table current_tournament: LONGTEXT Subject, LONGTEXT Sender, LONGTEXT body. The format of the body is in html form.
+table Misclleanous: LONGTEXT Subject, LONGTEXT Sender, LONGTEXT body. The format of the body is in html form.
 
 
 The requirements are listed in requirements.txt, so you can use the requirements.txt to install the development version.
