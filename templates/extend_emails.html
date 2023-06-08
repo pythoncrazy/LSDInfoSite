@@ -2,15 +2,15 @@
 
 {% block content %}
     <h1>{% block title %} Posts {% endblock %}</h1>
-    {% for misc_post in misc %}
+    {% for email in emails %}
         <div class='post'>
             <table>
                 <tr>
-                    <td>{{ misc_post['subject'] }}</th>
-                    <th>{{ misc_post['sender'] }}</th>
+                    <th>{{ email[0] }}</th> <!-- Subject is the 0-index, sender is 1-index, body is 2-index -->
+                    <th>{{ email[1] }}</th>
                 </tr>
                 <tr>
-                    <td>{{ misc_post['body'] }}</th>
+                    <td>{{ email[2] | safe}}</th>
                 </tr>
                 
             </table>

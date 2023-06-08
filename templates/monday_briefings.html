@@ -4,9 +4,15 @@
     <h1>{% block title %} Posts {% endblock %}</h1>
     {% for monday_briefing in monday_briefings %}
         <div class='post'>
-            <p>{{ monday_briefing['subject'] }}</p>
-            <h2>{{ monday_briefing['sender'] }}</h2>
-            <p>{{ monday_briefing['body'] }}</p>
+            <table>
+                <tr>
+                    <td>{{ monday_briefing[0] }}</th> <!-- Subject is the 0-index, sender is 1-index, body is 2-index -->
+                    <th>{{ monday_briefing[1] }}</th>
+                </tr>
+                <tr>
+                    <td>{{ misc_post[2] | safe}}</th>
+                </tr>
+                
+            </table>
         </div>
-    {% endfor %}
 {% endblock %}
