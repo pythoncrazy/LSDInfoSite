@@ -42,6 +42,8 @@ for msg in messages:
     # Add email to appropriate table in database
     if  'Monday Briefing' in subject:
         c.execute("REPLACE INTO monday_briefing (subject, sender, body) VALUES (?, ?, ?)", (subject, sender, body))
+    elif  'Tournament' in subject:
+        c.execute("REPLACE INTO tournaments (subject, sender, body) VALUES (?, ?, ?)", (subject, sender, body))
     else:
         c.execute("REPLACE INTO misc (subject, sender, body) VALUES (?, ?, ?)", (subject, sender, body))
     conn.commit()

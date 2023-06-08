@@ -1,0 +1,12 @@
+{% extends 'emails.html' %}
+
+{% block content %}
+    <h1>{% block title %} Posts {% endblock %}</h1>
+    {% for information in tournament_info %}
+        <div class='post'>
+            <h3>{{ information['subject'] }}</h3>
+            <p>{{ information['sender'] }}</p>
+            <h4>{{ information['body'] }}</h4>
+        </div>
+    {% endfor %}
+{% endblock %}

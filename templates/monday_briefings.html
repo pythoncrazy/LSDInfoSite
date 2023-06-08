@@ -1,11 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Monday Briefings</title>
-</head>
-<body>
-    <h1>Monday Briefings to be here</h1>
-    <h2>Welcome to FlaskApp!</h2>
-</body>
-</html>
+{% extends 'emails.html' %}
+
+{% block content %}
+    <h1>{% block title %} Posts {% endblock %}</h1>
+    {% for monday_briefing in monday_briefings %}
+        <div class='post'>
+            <p>{{ monday_briefing['subject'] }}</p>
+            <h2>{{ monday_briefing['sender'] }}</h2>
+            <p>{{ monday_briefing['body'] }}</p>
+        </div>
+    {% endfor %}
+{% endblock %}
