@@ -9,8 +9,8 @@ body = "Hi everyone, <br> This is going well.<br> Please do well at league tourn
 c.execute("CREATE TABLE IF NOT EXISTS monday_briefing (subject LONGTEXT, sender LONGTEXT, body LONGTEXT)")
 c.execute("CREATE TABLE IF NOT EXISTS misc (subject LONGTEXT, sender LONGTEXT, body LONGTEXT)")
 c.execute("CREATE TABLE IF NOT EXISTS tournaments (subject LONGTEXT, sender LONGTEXT, body LONGTEXT)")
-c.execute("REPLACE INTO monday_briefing (subject, sender, body) VALUES (?, ?, ?)", 
-          (subject, sender, body))
+#c.execute("REPLACE INTO monday_briefing (subject, sender, body) VALUES (?, ?, ?)", 
+#          (subject, sender, body))
 c.execute("REPLACE INTO misc (subject, sender, body) VALUES (?, ?, ?)", 
           (subject, sender, body))
 c.execute("REPLACE INTO tournaments (subject, sender, body) VALUES (?, ?, ?)", 

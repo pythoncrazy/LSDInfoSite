@@ -30,7 +30,7 @@ def render_tournaments():
     for m in list(tournaments):
         tournaments_list.append(list(m))
     tournaments = tournaments_list
-    return render_template("extend_emails.html", emails = tournaments_list)
+    return render_template("extend_emails.html", emails = tournaments_list, email_type="Tournament Emails!")
 
 @app.route('/monday_briefing')
 def render_monday_briefings():
@@ -40,7 +40,7 @@ def render_monday_briefings():
     for m in list(monday_briefing):
         monday_briefing_list.append(list(m))
     monday_briefing = monday_briefing_list
-    return render_template("extend_emails.html", emails = monday_briefing)
+    return render_template("extend_emails.html", emails = monday_briefing, email_type="Monday Briefing Emails!")
 
 @app.route('/misc')
 def render_misc():
@@ -51,4 +51,4 @@ def render_misc():
         misc_list.append(list(m))
     misc = misc_list
     print(misc)
-    return render_template("extend_emails.html", emails = misc)
+    return render_template("extend_emails.html", emails = misc, email_type="Miscellaneous Emails!")
